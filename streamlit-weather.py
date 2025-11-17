@@ -28,7 +28,7 @@ API_KEY = "CWA-5724EC9B-289C-4CBD-AD69-E4FF4934C108"
 LOCATION = st.selectbox("選擇城市",["Yunlin","Taipei","Kaohsiung"])
 
 url = f"https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization={API_KEY}"
-res = requests.get(url)
+res = requests.get(url, verify=False)
 data = res.json()
 
 location_data = data["records"]["location"][0]
